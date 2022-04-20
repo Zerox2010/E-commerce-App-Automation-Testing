@@ -1,4 +1,4 @@
-package registration;
+package base;
 
 import base.BaseTests;
 import org.openqa.selenium.WebDriver;
@@ -6,11 +6,6 @@ import org.testng.annotations.Test;
 import pages.RegistrationPage;
 
 public class RegistrationTests extends BaseTests {
-//    private WebDriver driver;
-//
-//    public RegistrationTests(WebDriver driver){
-//        this.driver=driver;
-//    }
 
 
     @Test

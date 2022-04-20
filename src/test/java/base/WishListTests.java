@@ -1,4 +1,4 @@
-package wishlist;
+package base;
 
 import base.BaseTests;
 import org.openqa.selenium.WebDriver;

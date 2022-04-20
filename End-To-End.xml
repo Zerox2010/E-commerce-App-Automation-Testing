@@ -3,8 +3,8 @@
 <!--<suite name="Suite1" verbose="1" >-->
 <!--    <test name="End To End">-->
 <!--        <classes>-->
-<!--            <class name="registration.RegistrationTests"/>-->
-<!--            <class name="login.LoginTests"/>-->
+<!--            <class name="base.RegistrationTests"/>-->
+<!--            <class name="base.LoginTests"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 <!--</suite>-->

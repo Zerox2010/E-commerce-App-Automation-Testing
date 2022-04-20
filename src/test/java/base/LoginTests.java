@@ -1,7 +1,5 @@
-package login;
+package base;
 
-import base.BaseTests;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
@@ -14,11 +12,7 @@ public class LoginTests extends BaseTests {
         LoginPage loginPage = homePage.clickLogInLink();
         loginPage.setEmail("test@gmail.com");
         loginPage.setPassword("test123");
-        HomePage homePage = loginPage.clickLogInButton();
-        //homePage.checkLogoutIsDisplayed();
-//
-//        softAssert.equals(homePage.checkLogoutIsDisplayed());
-//        softAssert.assertAll();
+        loginPage.clickLogInButton();
 
     }
 }

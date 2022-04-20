@@ -25,6 +25,7 @@ public class RegistrationPage {
 
 
 
+
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -82,6 +83,21 @@ public class RegistrationPage {
     public RegistrationCompletedPage clickRegisterButton(){
         driver.findElement(registerButton).click();
         return new RegistrationCompletedPage(driver);
+    }
+    public void registrationSteps() throws InterruptedException {
+        clickMaleButton();
+        enterFirstName("AAAAAA");
+        enterLastName("dwwdww");
+        selectBirthDay("30");
+        selectBirthMonth("2");
+        selectBirthYear("2000");
+        enterEmail("test@gmail.com");
+        enterCompanyName("dddddd");
+        enterPassword("test123");
+        enterConfirmPassword("test123");
+        clickRegisterButton();
+        Thread.sleep(2000);
+        HomePage homePage = clickContinueButton();
     }
 
 

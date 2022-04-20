@@ -1,22 +1,36 @@
-package base;
+package runners;
 
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
+import io.cucumber.java.en.Given;
+import io.cucumber.junit.Cucumber;
+import io.cucumber.junit.CucumberOptions;
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.HomePage;
-import utilils.WindowManager;
+import pages.LoginPage;
 
-public class BaseTests {
+@RunWith(Cucumber.class)
+@CucumberOptions(
+
+        features = "src\\test\\resources\\features",
+        glue = "stepDefinition",
+        tags ="@e2e"
+
+)
+
+public class TestRunners {
+
     private WebDriver driver;
     protected HomePage homePage;
     protected SoftAssert softAssert;
+    protected LoginPage loginPage;
 
-
-    @BeforeClass
-    public void setUp() {
+    @Before
+    public void userOpenTheBrowser(){
         String chromePath = System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", chromePath);
         driver = new ChromeDriver();
@@ -24,23 +38,8 @@ public class BaseTests {
         //driver.manage().window().fullscreen();
         //System.out.println(driver.getTitle());
         homePage = new HomePage(driver);
+        loginPage = new LoginPage(driver);
         softAssert = new SoftAssert();
-    }
 
-    @Test
-    public void successfulOrderTest() throws InterruptedException {
-        RegistrationTests registrationTests = new RegistrationTests();
-        registrationTests.testRegistration();
-
-    }
-
-    @AfterSuite
-    public void tearDown() {
-        driver.quit();
-    }
-
-    public WindowManager getWindowManager(){
-        return new WindowManager(driver);
     }
 }
-

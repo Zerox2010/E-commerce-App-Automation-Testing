@@ -7,7 +7,7 @@ public class LoginPage {
     private WebDriver driver;
     private By emailField = By.id("Email");
     private By passwordField = By.id("Password");
-    private By loginLink = By.linkText("Log in");
+    private By loginLink = By.xpath("//button[@class=\"button-1 login-button\"]");
     private By rememberMe = By.id("RememberMe");
 
 
@@ -37,13 +37,17 @@ public class LoginPage {
         return new ResetPasswordPage(driver);
     }
 
-    public HomePage clickLogInButton() {
+    public void clickLogInButton() {
         driver.findElement(loginLink).click();
-        return new HomePage(driver);
     }
 
     private void clickLink(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
     }
 
+    public void loginSteps(){
+        setEmail("test@gmail.com");
+        setPassword("test123");
+        clickLogInButton();
+    }
 }

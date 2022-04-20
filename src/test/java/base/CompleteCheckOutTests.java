@@ -1,8 +1,5 @@
-package CheckOut;
+package base;
 
-import base.BaseTests;
-import login.LoginTests;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import pages.CheckOutPage;
 import pages.ShoppingCartPage;

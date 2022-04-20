@@ -1,17 +1,17 @@
-package items;
+package base;
 
 import base.BaseTests;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-import pages.AppleMackBookPage;
+import pages.HtcOnePage;
 
-public class AppleMacBookTests extends BaseTests {
+public class HtcOneTests extends BaseTests {
 
 
     @Test
     public void testAddToCart() throws InterruptedException {
-        AppleMackBookPage appleMackBookPage = homePage.clickAppleMacBookItem();
-        appleMackBookPage.clickAddToCart();
+        HtcOnePage htcOnePage = homePage.clickHtcOneItem();
+        htcOnePage.clickAddToCart();
         Thread.sleep(1000);
 //        softAssert.assertTrue(buildYourOwnComputerPage.getConfirmationText());
 //        softAssert.assertAll();
